@@ -45,6 +45,12 @@ export default defineConfig({
           configPath: 'tailwind.config.ts',
           cssPath: '@/assets/css/tailwind.css',
         },
+        dirs: {
+          src: '@/',
+          components: '@/components',
+          pages: '@/pages',
+          layouts: '@/layouts',
+        },
       }),
       // ...
       // For details, refer to https://github.com/antfu/unplugin-auto-import#configuration
