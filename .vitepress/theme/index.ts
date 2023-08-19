@@ -1,3 +1,3 @@
-import config from '../../src/app'
+import config from '@/app'
 
 export default config
