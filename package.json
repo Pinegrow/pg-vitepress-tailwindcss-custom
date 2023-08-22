@@ -26,7 +26,7 @@
     "@vueuse/head": "^1.1.26",
     "defu": "^6.1.2",
     "pinia": "^2.1.6",
-    "vue": "3.2.47"
+    "vue": "^3.3.4"
   },
   "devDependencies": {
     "@iconify/json": "^2.2.51",

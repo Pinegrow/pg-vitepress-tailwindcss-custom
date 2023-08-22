@@ -30,8 +30,7 @@ export default {
   Layout,
   enhanceApp({ app, router, siteData }) {
     // ...
-    // TODO: Uncomment this line
-    // app.use(pinia)
+    app.use(pinia)
     app.use(head)
   },
 }

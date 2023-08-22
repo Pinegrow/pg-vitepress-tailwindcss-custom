@@ -8,8 +8,6 @@
 </script>
 <template>
   <section>
-    <!-- TODO: Uncomment this line -->
-    <!-- <TheCounter /> -->
     <div
       class="bg-center bg-cover bg-design-image bg-no-repeat blur-none z-0 lg:bg-design-image-large"
     >
