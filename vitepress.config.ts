@@ -7,12 +7,14 @@ import AutoImportAPIs from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
 import presetIcons from '@unocss/preset-icons'
 // import VueDevTools from 'vite-plugin-vue-devtools'
+// import myVitepressModule from './src/modules/my-module'
 
 import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  /* Uncomment this line */
+  // https://github.com/vuejs/vitepress/issues/2806
+  // https://github.com/vuejs/vitepress/issues/2811
   // srcDir: fileURLToPath(new URL('./src/pages', import.meta.url)),
   title: 'My Awesome Project',
   description: 'A VitePress Site',
@@ -40,7 +42,9 @@ export default defineConfig({
   vite: {
     plugins: [
       liveDesigner({
-        devtoolsKey: 'devtools',
+        iconPreferredCase: 'unocss', // default value (can be removed), unocss by default uses the unocss format for icon names
+        devtoolsKey: 'devtools', // see app.ts
+        /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
         tailwindcss: {
           configPath: 'tailwind.config.ts',
           cssPath: '@/assets/css/tailwind.css',
@@ -51,6 +55,15 @@ export default defineConfig({
           pages: '@/pages',
           layouts: '@/layouts',
         },
+        // plugins: [
+        //   {
+        //     name: 'My Awesome Lib 3.0',
+        //     key: 'my-awesome-lib',
+        //     pluginPath: fileURLToPath(
+        //       new URL('./my-awesome-lib/web-types.json', import.meta.url),
+        //     ),
+        //   },
+        // ],
       }),
       // ...
       // For details, refer to https://github.com/antfu/unplugin-auto-import#configuration
@@ -60,38 +73,46 @@ export default defineConfig({
           /.vue$/,
           /.vue?vue/, // .vue
           /.md$/, // .md
+          /.mdx$/, // .mdx
         ],
         imports: [
           'vue',
-          'vue-router',
+          // 'vue-router',
           // 'vue-i18n',
           // 'vue/macros',
-          // '@vueuse/head',
-          // '@vueuse/core',
-          // 'pinia',
+          '@vueuse/head',
+          '@vueuse/core',
+          'pinia',
         ],
         dirs: [
-          '.',
-          // 'src/composables',
-          // 'src/stores',
+          /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
+          'src/composables',
+          'src/utils',
+          'src/stores',
         ],
         vueTemplate: true,
         dts: 'auto-imports.d.ts',
       }),
       // ...
+      // Update config as per your needs
       // For details, refer to https://github.com/antfu/unplugin-vue-components#configuration
       AutoImportComponents({
-        /* Take care to amend any paths to reflect the actual paths used in your project. */
+        /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
 
-        dirs: ['./src/components'],
+        dirs: ['src/components'],
 
         // allow auto load markdown components under ./src/components/
+        // extensions: ['vue', 'jsx', 'tsx', 'js', 'ts', 'mdx', 'svelte']
         extensions: ['vue', 'md'],
 
         // allow auto import and register components used in markdown
+        // include: [/\.vue$/, /\.vue\?vue/, /\.mdx?/]
         include: [/.vue$/, /.vue?vue/, /.md$/],
 
         // resolvers: [], // Auto-import using resolvers
+
+        // transformer: 'vue3',
+
         dts: 'components.d.ts',
       }),
       Unocss({
@@ -108,6 +129,8 @@ export default defineConfig({
       alias: {
         /* Must be either an object, or an array of { find, replacement, customResolver } pairs. */
         /* Refer to: https://vitejs.dev/config/shared-options.html#resolve-alias */
+        /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
+
         '@': fileURLToPath(new URL('./src', import.meta.url)),
         '~': fileURLToPath(new URL('./src', import.meta.url)),
         '~~': fileURLToPath(new URL('./', import.meta.url)),

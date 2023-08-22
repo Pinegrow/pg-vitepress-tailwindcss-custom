@@ -12,9 +12,13 @@
 // import { h } from 'vue'
 // import Theme from 'vitepress/theme'
 import Layout from '@/layouts/default.vue'
+import 'uno.css'
 // import '@/assets/css/main.css'
 import '@/assets/css/tailwind.css'
-import 'uno.css'
+// import 'prismjs/themes/prism-tomorrow.css'
+
+import pinia from '@/plugins/pinia'
+import head from '@/plugins/head'
 
 export default {
   // extends: Theme,
@@ -26,5 +30,8 @@ export default {
   Layout,
   enhanceApp({ app, router, siteData }) {
     // ...
+    // TODO: Uncomment this line
+    // app.use(pinia)
+    app.use(head)
   },
 }
