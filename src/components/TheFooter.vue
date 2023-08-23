@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  import BaseIcon from '@/components/BaseIcon.vue'
+
   // const props = defineProps({
   // 	name: {
   // 		type: String,
@@ -16,15 +18,17 @@
           external
           target="_blank"
         >
-          <BaseIcon name="i-logos-facebook"></BaseIcon> </a
-        ><a
+          <BaseIcon name="i-logos-facebook"></BaseIcon>
+        </a>
+        <a
           href="https://twitter.com/vuedesigner"
           aria-label="twitter"
           external
           target="_blank"
         >
-          <BaseIcon name="i-logos-twitter"></BaseIcon> </a
-        ><a
+          <BaseIcon name="i-logos-twitter"></BaseIcon>
+        </a>
+        <a
           href="https://www.youtube.com/@vuedesigner"
           aria-label="youtube"
           external

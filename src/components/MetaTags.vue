@@ -1,13 +1,13 @@
 <script setup lang="ts">
-  import site from '~/site'
   import { useHead, useSeoMeta } from 'unhead'
-
   import checkDarkTheme from '@/composables/dark-color-scheme-check?raw'
-
   import type { Script } from '@unhead/schema'
   type TurboScript = Script & { once: true }
+  import { useData } from 'vitepress'
 
-  const { title, description } = site
+  const { site, frontmatter } = useData()
+  const { title, description } = site.value
+  const author = 'Pinegrow'
 
   useSeoMeta({
     title,
@@ -19,6 +19,7 @@
   })
 
   useHead({
+    title,
     titleTemplate: (titleChunk) => {
       return titleChunk ? `${titleChunk} - ${title}` : title
     },
@@ -29,7 +30,7 @@
         property: 'viewport',
         content: 'width=device-width, initial-scale=1',
       },
-      { property: 'author', content: 'Pinegrow' },
+      { property: 'author', content: author },
       {
         property: 'twitter:image',
         content: 'https://icons.vuetelescope.com/vue.svg',

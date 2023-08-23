@@ -2,7 +2,7 @@
 import { fileURLToPath, URL } from 'node:url'
 
 import { liveDesigner } from '@pinegrow/vite-plugin'
-import AutoImportComponents from 'unplugin-vue-components/vite'
+// import AutoImportComponents from 'unplugin-vue-components/vite'
 import AutoImportAPIs from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
 import presetIcons from '@unocss/preset-icons'
@@ -96,25 +96,27 @@ export default defineConfig({
       // ...
       // Update config as per your needs
       // For details, refer to https://github.com/antfu/unplugin-vue-components#configuration
-      AutoImportComponents({
-        /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
+      // Bug report - https://github.com/vuejs/vitepress/discussions/2836
 
-        dirs: ['src/components'],
+      // AutoImportComponents({
+      //   /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
 
-        // allow auto load markdown components under ./src/components/
-        // extensions: ['vue', 'jsx', 'tsx', 'js', 'ts', 'mdx', 'svelte']
-        extensions: ['vue', 'md'],
+      //   dirs: ['src/components'],
 
-        // allow auto import and register components used in markdown
-        // include: [/\.vue$/, /\.vue\?vue/, /\.mdx?/]
-        include: [/.vue$/, /.vue?vue/, /.md$/],
+      //   // allow auto load markdown components under ./src/components/
+      //   // extensions: ['vue', 'jsx', 'tsx', 'js', 'ts', 'mdx', 'svelte']
+      //   extensions: ['vue', 'md'],
 
-        // resolvers: [], // Auto-import using resolvers
+      //   // allow auto import and register components used in markdown
+      //   // include: [/\.vue$/, /\.vue\?vue/, /\.mdx?/]
+      //   include: [/.vue$/, /.vue?vue/, /.md$/],
 
-        // transformer: 'vue3',
+      //   // resolvers: [], // Auto-import using resolvers
 
-        dts: 'components.d.ts',
-      }),
+      //   // transformer: 'vue3',
+
+      //   dts: 'components.d.ts',
+      // }),
       Unocss({
         presets: [
           presetIcons({

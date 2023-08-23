@@ -4,6 +4,12 @@ title: Home
 layout: home
 ---
 
+<script setup lang="ts">
+import HeroSection from '@/components/HeroSection.vue'
+import AboutTemplate from '@/components/AboutTemplate.vue'
+import WalkThrough from '@/components/WalkThrough.vue'
+</script>
+
 <main>
   <HeroSection />
   <AboutTemplate />

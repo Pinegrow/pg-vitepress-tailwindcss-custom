@@ -1,4 +1,6 @@
 <script setup lang="ts">
+  import BaseButton from '@/components/BaseButton.vue'
+
   // const props = defineProps({
   // 	name: {
   // 		type: String,
@@ -37,7 +39,8 @@
               target="_blank"
               trailing-icon="i-material-symbols-open-in-new"
               size="md"
-              ><span class="font-normal text-xl">Learn More</span>
+            >
+              <span class="font-normal text-xl">Learn More</span>
             </BaseButton>
           </div>
         </div>
