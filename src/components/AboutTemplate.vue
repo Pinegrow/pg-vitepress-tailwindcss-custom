@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import BaseButton from '@/components/BaseButton.vue'
   import site from '@/site'
   const { description } = site
 </script>
