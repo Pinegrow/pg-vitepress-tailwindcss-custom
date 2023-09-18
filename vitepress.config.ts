@@ -47,6 +47,8 @@ export default defineConfig({
         tailwindcss: {
           configPath: 'tailwind.config.ts',
           cssPath: '@/assets/css/tailwind.css',
+          // restartOnThemeUpdate: true,
+          // restartOnConfigUpdate: true,
         },
         dirs: {
           src: '@/',
