@@ -2,6 +2,7 @@
   import { useData } from 'vitepress'
   const { site, frontmatter } = useData()
 </script>
+
 <template>
   <div>
     <MetaTags />

@@ -38,6 +38,15 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
     ],
   },
+
+  vue: {
+    template: {
+      compilerOptions: {
+        isCustomElement: (tag) => tag === 'lite-youtube',
+      },
+    },
+  },
+
   vite: {
     plugins: [
       liveDesigner({
@@ -95,29 +104,23 @@ export default defineConfig({
         vueTemplate: true,
         dts: 'auto-imports.d.ts',
       }),
-      // ...
-      // Update config as per your needs
-      // For details, refer to https://github.com/antfu/unplugin-vue-components#configuration
-      // Bug report - https://github.com/vuejs/vitepress/discussions/2836
 
+      // For details, refer to https://github.com/antfu/unplugin-vue-components#configuration
       AutoImportComponents({
         /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
 
         dirs: ['src/components'],
 
         // allow auto load markdown components under ./src/components/
-        // extensions: ['vue', 'jsx', 'tsx', 'js', 'ts', 'mdx', 'svelte']
         extensions: ['vue', 'md'],
 
         // allow auto import and register components used in markdown
-        include: [/\.vue$/, /\.vue\?vue/, /\.mdx?/],
+        include: [/\.vue$/, /\.vue\?vue/, /\.md$/, /\.mdx?/],
 
         // resolvers: [], // Auto-import using resolvers
-
-        // transformer: 'vue3',
-
         dts: 'components.d.ts',
       }),
+
       Unocss({
         presets: [
           presetIcons({
