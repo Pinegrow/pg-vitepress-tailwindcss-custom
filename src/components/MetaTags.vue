@@ -6,7 +6,6 @@
 
   import { computed } from 'vue'
   import { useData } from 'vitepress'
-  import { isClient, useBrowserLocation } from '@vueuse/core'
 
   import siteDefn from '@/site'
   import image from '@/screenshots/image.jpg'
@@ -44,9 +43,7 @@
   const { title, description, url, author } = siteDefn
 
   const { site, frontmatter } = useData()
-  const imgUrl = computed(
-    () => new URL(image, useBrowserLocation().value.origin).href,
-  )
+  const imgUrl = new URL(image, url).href
 
   useSeoMeta({
     // charset: 'utf-8',
@@ -58,7 +55,7 @@
     ogTitle: title,
     ogDescription: description,
     ogType: 'website',
-    ogImage: imgUrl.value,
+    ogImage: imgUrl,
     ogImageAlt: title,
     // og:image:width
     // og:image:height
@@ -71,7 +68,7 @@
     // og: type
     twitterTitle: title,
     twitterDescription: description,
-    twitterImage: imgUrl.value,
+    twitterImage: imgUrl,
     twitterImageAlt: title,
     twitterSite: '@vuedesigner',
     twitterCreator: '@techakayy',
