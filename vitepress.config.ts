@@ -11,32 +11,18 @@ import presetIcons from '@unocss/preset-icons'
 
 import { defineConfig } from 'vitepress'
 
+import siteDefn from './src/site'
+const { title, description, url } = siteDefn
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   // https://github.com/vuejs/vitepress/issues/2806
   // srcDir: 'src/pages',
-  title: 'My Awesome Project',
-  description: 'A VitePress Site',
-  themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' },
-    ],
-
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' },
-        ],
-      },
-    ],
-
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
-    ],
+  title,
+  titleTemplate: `:title - ${title}`,
+  description,
+  sitemap: {
+    hostname: url,
   },
 
   vue: {
@@ -143,4 +129,26 @@ export default defineConfig({
       },
     },
   },
+
+  // themeConfig: {
+  //   // https://vitepress.dev/reference/default-theme-config
+  //   nav: [
+  //     { text: 'Home', link: '/' },
+  //     { text: 'Examples', link: '/markdown-examples' },
+  //   ],
+
+  //   sidebar: [
+  //     {
+  //       text: 'Examples',
+  //       items: [
+  //         { text: 'Markdown Examples', link: '/markdown-examples' },
+  //         { text: 'Runtime API Examples', link: '/api-examples' },
+  //       ],
+  //     },
+  //   ],
+
+  //   socialLinks: [
+  //     { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
+  //   ],
+  // },
 })
