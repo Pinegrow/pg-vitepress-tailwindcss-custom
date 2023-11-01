@@ -4,11 +4,11 @@ title: Home
 layout: home
 ---
 
-<main>
+<div>
   <HeroSection />
   <AboutTemplate />
   <WalkThrough />
-</main>
+</div>
 
 <style>
 </style>
