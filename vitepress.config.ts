@@ -17,7 +17,7 @@ const { title, description, url } = siteDefn
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   // https://github.com/vuejs/vitepress/issues/2806
-  // srcDir: 'src/pages',
+  srcDir: 'src/pages',
   title,
   titleTemplate: `:title - ${title}`,
   description,
@@ -55,9 +55,10 @@ export default defineConfig({
         ],
         dirs: [
           /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
-          'src/composables',
-          'src/utils',
-          'src/stores',
+          // Path must be relative to Vitepress's srcDir
+          '../composables',
+          '../utils',
+          '../stores',
         ],
         vueTemplate: true,
         dts: 'auto-imports.d.ts',
@@ -66,8 +67,8 @@ export default defineConfig({
       // For details, refer to https://github.com/antfu/unplugin-vue-components#configuration
       AutoImportComponents({
         /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
-
-        dirs: ['src/components'],
+        // Path must be relative to Vitepress's srcDir
+        dirs: ['../components'],
 
         // allow auto load markdown components under ./src/components/
         extensions: ['vue', 'md'],
@@ -87,14 +88,14 @@ export default defineConfig({
         ],
         content: {
           pipeline: {
-            include: ['./src/**/*'],
+            include: ['../**/*'],
           },
         },
       }),
       // VueDevTools(),
       liveDesigner({
         iconPreferredCase: 'unocss', // default value (can be removed), unocss by default uses the unocss format for icon names
-        devtoolsKey: 'devtools', // see app.ts
+        devtoolsKey: 'devtoolsKey', // see app.ts
         /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
         tailwindcss: {
           configPath: 'tailwind.config.ts',
