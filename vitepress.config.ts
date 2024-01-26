@@ -16,7 +16,7 @@ const { title, description, url } = siteDefn
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  // https://github.com/vuejs/vitepress/issues/2806
+  // srcDir must be relative to root
   srcDir: 'src/pages',
   title,
   titleTemplate: `:title - ${title}`,
@@ -128,7 +128,7 @@ export default defineConfig({
         /* Must be either an object, or an array of { find, replacement, customResolver } pairs. */
         /* Refer to: https://vitejs.dev/config/shared-options.html#resolve-alias */
         /* Please ensure that you update the filenames and paths to accurately match those used in your project. */
-
+        // Path resolved relative to this file
         '@': fileURLToPath(new URL('./src', import.meta.url)),
         '~': fileURLToPath(new URL('./src', import.meta.url)),
         '~~': fileURLToPath(new URL('./', import.meta.url)),
