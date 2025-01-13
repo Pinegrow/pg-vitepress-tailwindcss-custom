@@ -1,13 +1,3 @@
-// import devtools from '@vue/devtools'
-
-// // @ts-ignore
-// if (process.env.NODE_ENV === 'development') {
-//   // devtools.connect(/* host, port */)
-//   // (window as any) = devtools
-//   // @ts-ignore
-//   window.devtoolsKey = devtools
-// }
-
 // For customizing theme, make sure you install vue as a dependency
 // Refer to: https://vitepress.dev/guide/custom-theme
 // Refer to: https://vitepress.dev/guide/extending-default-theme#layout-slots

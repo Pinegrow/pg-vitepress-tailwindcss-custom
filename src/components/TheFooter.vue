@@ -16,7 +16,7 @@
           external
           target="_blank"
         >
-          <BaseIcon name="i-logos-facebook"></BaseIcon>
+          <BaseIcon name="i-logos-facebook" />
         </a>
         <a
           href="https://twitter.com/vuedesigner"
@@ -24,7 +24,7 @@
           external
           target="_blank"
         >
-          <BaseIcon name="i-logos-twitter"></BaseIcon>
+          <BaseIcon name="i-logos-twitter" />
         </a>
         <a
           href="https://discord.gg/BYp45Nnu5T"
@@ -32,7 +32,7 @@
           external
           target="_blank"
         >
-          <BaseIcon name="i-logos-discord-icon"></BaseIcon>
+          <BaseIcon name="i-logos-discord-icon" />
         </a>
         <a
           href="https://www.youtube.com/@vuedesigner"
@@ -40,7 +40,7 @@
           external
           target="_blank"
         >
-          <BaseIcon name="i-logos-youtube-icon"></BaseIcon>
+          <BaseIcon name="i-logos-youtube-icon" />
         </a>
       </div>
     </div>
