@@ -22,10 +22,10 @@
     "node": "^14.18 || >= 16.0.0"
   },
   "dependencies": {
-    "@vueuse/core": "^12.4.0",
     "@unhead/schema": "^1.11.16",
     "@unhead/schema-org": "^1.11.16",
     "@unhead/vue": "^1.11.16",
+    "@vueuse/core": "^12.4.0",
     "defu": "^6.1.4",
     "lite-youtube-embed": "^0.3.3",
     "ofetch": "^1.4.1",
@@ -36,8 +36,8 @@
   "devDependencies": {
     "@iconify/json": "^2.2.294",
     "@nuxt/eslint-config": "^0.7.5",
-    "@pinegrow/tailwindcss-plugin": "^3.0.35",
-    "@pinegrow/vite-plugin": "^3.0.69",
+    "@pinegrow/tailwindcss-plugin": "4.2.3",
+    "@pinegrow/vite-plugin": "3.0.74",
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",
     "@tsconfig/node22": "^22.0.0",
